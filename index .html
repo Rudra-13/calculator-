@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="calculator">
+        <form action="/" method="post">
+            <input type="text" name="expression" id="expression" readonly>
+            <div class="buttons">
+                <button type="button" onclick="updateExpression('7')">7</button>
+                <button type="button" onclick="updateExpression('8')">8</button>
+                <button type="button" onclick="updateExpression('9')">9</button>
+                <button type="button" onclick="updateExpression('+')">+</button>
+                <button type="button" onclick="updateExpression('4')">4</button>
+                <button type="button" onclick="updateExpression('5')">5</button>
+                <button type="button" onclick="updateExpression('6')">6</button>
+                <button type="button" onclick="updateExpression('-')">-</button>
+                <button type="button" onclick="updateExpression('1')">1</button>
+                <button type="button" onclick="updateExpression('2')">2</button>
+                <button type="button" onclick="updateExpression('3')">3</button>
+                <button type="button" onclick="updateExpression('*')">*</button>
+                <button type="button" onclick="updateExpression('0')">0</button>
+                <button type="button" onclick="updateExpression('.')">.</button>
+                <button type="submit" id="calculate">=</button>
+                <button type="button" onclick="updateExpression('/')">/</button>
+                <button type="button" onclick="clearExpression()">C</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function updateExpression(value) {
+            document.getElementById('expression').value += value;
+        }
+
+        function clearExpression() {
+            document.getElementById('expression').value = '';
+        }
+    </script>
+</body>
+</html>
